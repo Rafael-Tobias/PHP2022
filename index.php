@@ -15,13 +15,11 @@ spl_autoload_register("classLoader");
 // Front Controller
 class Aplicacao
 {
-static private $app = ["/RafaelTobiasPHP", "/RafaelTobiasPHP/index.php"];
+  static private $app = "/RafaelTobiasPHP";
   public static function run()
   {
     $layout = new Template('view/layout.html');
-    $route = new Route(self::$app);
-    $class = $route->getClassName();
-    $method = $route->getMethodName();
+    $method = "";
     if (isset($_GET["class"])) {
       $class = $_GET["class"];
     }
@@ -38,11 +36,10 @@ static private $app = ["/RafaelTobiasPHP", "/RafaelTobiasPHP/index.php"];
       } else {
         $pagina->controller();
       }
-      $layout->set('uri', self::$app[0]);
+      $layout->set('uri', self::$app);
       $layout->set('conteudo', $pagina->getMessage());
     }
     echo $layout->saida();
   }
 }
 Aplicacao::run();
-
