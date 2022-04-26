@@ -1,0 +1,32 @@
+<table>
+  <thead>
+    <tr>
+      <th>paciente</th>
+      <th>Configuração</th>
+      <th>diagnostico</th>
+      <th>Editar</th>
+      <th>Apagar</th>
+    </tr>
+  </thead>
+  <tbody>
+    {linha}
+    <tr>
+      <td>{paciente}</td>
+      <td>{idade}</td>
+      <td>{diagnostico}</td>
+      <td>
+        <button type="button">Editar</button>
+      </td>
+      <td>
+        <button
+          type="button"
+          onclick="if(confirm('Deseja realmente apagar?'))
+            location.href='?class=Tabela&method=remover&id={id}'"
+        >
+          Remover
+        </button>
+      </td>
+    </tr>
+    {/linha}
+  </tbody>
+</table>

@@ -8,7 +8,7 @@ final class Connection
   public static function open()
   {
     $type = "mysql";
-    $user = "Alunos";
+    $user = "alunos";
     $pass = "cefetmg";
     $name = "alunos";
     $host = "localhost";
