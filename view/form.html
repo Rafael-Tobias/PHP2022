@@ -1,14 +1,33 @@
 <form method="post" action="?class=Form&method=salvar">
+    <input type="hidden" name="id" value="{id}" />
     <div>
-        <label for="">Paciente:</label>
-        <input type="varchar" name="paciente" id="paciente">
-
-        <label for="">Idade:</label>
-        <input type="tinyint" name="idade" id="idade">
-
-        <label for="">Diagnóstico:</label>
-        <input type="text" name="diagnostico" id="diagnostico">
-
-        <button type="submit">Salvar</button>
-
+      <label for="paciente">Paciente:</label>
+      <input
+        type="text"
+        name="paciente"
+        id="paciente"
+        required
+        maxlength="50"
+        value="{paciente}"
+      />
     </div>
+    <div>
+      <label for="idade">Idade:</label>
+      <textarea name="idade" id="idade" required>{idade}</textarea>
+    </div>
+    <div>
+      <label for="diagnostico">Diagnostico:</label>
+      <input
+      type="text"
+      name="diagnostico"
+      id="diagnostico"
+      required
+      maxlength="50"
+      value="{diagnostico}"
+      />
+    </div>
+    <div>
+      <button type="submit">Salvar</button>
+    </div>
+  </form>
+  

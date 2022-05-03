@@ -1,9 +1,9 @@
 <table>
   <thead>
     <tr>
-      <th>paciente</th>
-      <th>Configuração</th>
-      <th>diagnostico</th>
+      <th>Paciente</th>
+      <th>Idade</th>
+      <th>Diagnostico</th>
       <th>Editar</th>
       <th>Apagar</th>
     </tr>
@@ -15,10 +15,17 @@
       <td>{idade}</td>
       <td>{diagnostico}</td>
       <td>
-        <button type="button">Editar</button>
+        <button
+          class="edit"
+          type="button"
+          onclick="location.href='?class=Form&method=editar&id={id}'"
+        >
+          Editar
+        </button>
       </td>
       <td>
         <button
+          class =  "remove"
           type="button"
           onclick="if(confirm('Deseja realmente apagar?'))
             location.href='?class=Tabela&method=remover&id={id}'"

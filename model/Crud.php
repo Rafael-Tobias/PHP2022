@@ -43,6 +43,24 @@ class Crud
       }
     }
   }
+  public function update($valores = NULL, $condicao = NULL)
+  {
+    if (!$valores || !$condicao) {
+      echo "Valores ou condição não informados!";
+      return false;
+    } else {
+      $conexao = Transaction::get();
+      $sql = "UPDATE $this->tabela SET $valores WHERE $condicao";
+      $resultado = $conexao->query($sql);
+      if ($resultado->rowCount() > 0) {
+        echo "Atualizado com sucesso!";
+        return true;
+      } else {
+        echo "Erro ao atualizar registro!";
+        return false;
+      }
+    }
+  }
   public function delete($condicao = NULL)
   {
     if (!$condicao) {
