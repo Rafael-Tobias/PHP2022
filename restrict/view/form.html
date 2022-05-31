@@ -13,21 +13,26 @@
     </div>
     <div>
       <label for="idade">Idade:</label>
-      <textarea name="idade" id="idade" required>{idade}</textarea>
+      <input
+        type="text"
+        name="idade"
+        id="idade"
+        required
+        maxlength="50"
+        value="{idade}"
+      />
     </div>
     <div>
-      <label for="diagnostico">Diagnostico:</label>
+      <label for="diagnostico">Diagnóstico:</label>
       <input
-      type="text"
-      name="diagnostico"
-      id="diagnostico"
-      required
-      maxlength="50"
-      value="{diagnostico}"
+        type="number"
+        name="diagnostico"
+        id="diagnostico"
+        required
+        value="{diagnostico}"
       />
     </div>
     <div>
       <button type="submit">Salvar</button>
     </div>
-  </form>
-  
+</form>
